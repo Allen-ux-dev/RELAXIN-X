@@ -1,0 +1,2 @@
+PRODUCT_BUNDLE_IDENTIFIER = com.aapl.relaxin.post-jailbreak
+HEADER_SEARCH_PATHS = $(inherited) "$(SRCROOT)/build/BaseBinWork/Vendor/Dopamine/BaseBin/.include"

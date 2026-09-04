@@ -1,0 +1,78 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "CFBundleDisplayName" : {
+      "comment" : "Bundle display name",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Relaxin"
+          }
+        },
+        "ar" : { "stringUnit" : { "state" : "translated", "value" : "Relaxin" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Relaxin" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Relaxin" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Relaxin" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "Relaxin" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Relaxin" } },
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Relaxin" } },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Relaxin"
+          }
+        }
+      }
+    },
+    "CFBundleName" : {
+      "comment" : "Bundle name",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Relaxin"
+          }
+        },
+        "ar" : { "stringUnit" : { "state" : "translated", "value" : "Relaxin" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Relaxin" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Relaxin" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Relaxin" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "Relaxin" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Relaxin" } },
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Relaxin" } },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Relaxin"
+          }
+        }
+      }
+    },
+    "NSFaceIDUsageDescription" : {
+      "comment" : "Privacy - Face ID Usage Description",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Authentication is required to change the “mobile” user password."
+          }
+        },
+        "ar" : { "stringUnit" : { "state" : "translated", "value" : "يلزم التحقق من الهوية لتغيير كلمة مرور المستخدم «mobile»." } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Zum Ändern des Passworts für den Benutzer „mobile“ ist eine Authentifizierung erforderlich." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Se requiere autenticación para cambiar la contraseña del usuario «mobile»." } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Une authentification est requise pour modifier le mot de passe de l’utilisateur « mobile »." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "「mobile」ユーザーのパスワードを変更するには認証が必要です。" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Для изменения пароля пользователя «mobile» требуется аутентификация." } },
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Cần xác thực để thay đổi mật khẩu của người dùng “mobile”." } },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更改“mobile”用户密码前需要进行身份验证。"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.3"
+}

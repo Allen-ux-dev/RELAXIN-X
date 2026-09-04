@@ -1,0 +1,14 @@
+#include "Base.xcconfig"
+
+GCC_OPTIMIZATION_LEVEL = s
+SWIFT_OPTIMIZATION_LEVEL = -Osize
+ENABLE_PREVIEWS = NO
+ENABLE_DEBUG_DYLIB = NO
+DEBUG_INFORMATION_FORMAT = dwarf-with-dsym
+
+// Keep every Xcode strip phase disabled. Debian packages use the ar container
+// format, so Xcode can mistake bundled .deb files for static libraries and run
+// ranlib/strip on the package itself.
+DEPLOYMENT_POSTPROCESSING = NO
+STRIP_INSTALLED_PRODUCT = NO
+COPY_PHASE_STRIP = NO

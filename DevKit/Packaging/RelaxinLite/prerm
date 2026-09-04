@@ -1,0 +1,5 @@
+#!/bin/sh
+
+uicache -u /Applications/RelaxinLite.app || true
+
+exit 0

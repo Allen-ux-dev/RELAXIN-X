@@ -1,0 +1,69 @@
+{
+  "fill": {
+    "automatic-gradient": "srgb:1.00000,1.00000,1.00000,1.00000"
+  },
+  "groups": [
+    {
+      "layers": [
+        {
+          "glass": false,
+          "hidden-specializations": [
+            {
+              "appearance": "light",
+              "value": true
+            },
+            {
+              "appearance": "dark",
+              "value": false
+            },
+            {
+              "appearance": "tinted",
+              "value": false
+            }
+          ],
+          "image-name": "relaxin-icon-r-white.svg",
+          "name": "relaxin-icon-r-white",
+          "position": {
+            "scale": 0.75,
+            "translation-in-points": [0, 0]
+          }
+        },
+        {
+          "glass": false,
+          "hidden-specializations": [
+            {
+              "appearance": "light",
+              "value": false
+            },
+            {
+              "appearance": "dark",
+              "value": true
+            },
+            {
+              "appearance": "tinted",
+              "value": true
+            }
+          ],
+          "image-name": "relaxin-icon-r-black.svg",
+          "name": "relaxin-icon-r-black",
+          "position": {
+            "scale": 0.75,
+            "translation-in-points": [0, 0]
+          }
+        }
+      ],
+      "shadow": {
+        "kind": "neutral",
+        "opacity": 0.6
+      },
+      "translucency": {
+        "enabled": true,
+        "value": 0.2
+      }
+    }
+  ],
+  "supported-platforms": {
+    "circles": ["watchOS"],
+    "squares": "shared"
+  }
+}

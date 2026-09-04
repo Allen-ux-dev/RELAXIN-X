@@ -1,0 +1,14 @@
+PRODUCT_BUNDLE_IDENTIFIER = com.aapl.relaxin.engine
+DEFINES_MODULE = YES
+HEADER_SEARCH_PATHS = $(inherited) "$(SRCROOT)/build/BaseBinWork/Vendor/Dopamine/BaseBin/.include" "$(SRCROOT)/Vendor/zstd/lib"
+// Every exploit translation unit needs the stdio log adapter. Prefixing it at
+// target level keeps the per-file flag list in project.pbxproj from growing one
+// entry per exploit source. `printf` interposition stays per-file, because it is
+// opt-in per translation unit via -DRLX_EXPLOIT_INTERPOSE_PRINTF=1.
+OTHER_CFLAGS = $(inherited) -include "$(SRCROOT)/RelaxinEngine/Log/RLXExploitLogBridge.h"
+LIBRARY_SEARCH_PATHS = $(inherited) "$(SRCROOT)/build/BaseBinResources"
+OTHER_LDFLAGS = $(inherited) -framework IOKit -framework IOSurface
+OTHER_LDFLAGS[sdk=iphoneos*] = $(inherited) -ljailbreak -lxpf -lchoma
+OTHER_LDFLAGS[sdk=iphonesimulator*] = $(inherited) -ljailbreak-sim -lxpf-sim -lchoma-sim
+GCC_OPTIMIZATION_LEVEL = 0
+SWIFT_OPTIMIZATION_LEVEL = -Onone

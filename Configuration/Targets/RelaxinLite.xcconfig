@@ -1,0 +1,4 @@
+PRODUCT_BUNDLE_IDENTIFIER = com.aapl.relaxin.lite
+HEADER_SEARCH_PATHS = $(inherited) "$(SRCROOT)/build/BaseBinWork/Vendor/Dopamine/BaseBin/.include"
+LIBRARY_SEARCH_PATHS = $(inherited) "$(SRCROOT)/build/BaseBinResources"
+OTHER_LDFLAGS[sdk=iphoneos*] = $(inherited) -ljailbreak

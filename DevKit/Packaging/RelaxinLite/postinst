@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e
+
+chown 0:0 /Applications/RelaxinLite.app/RelaxinLite
+chmod 4755 /Applications/RelaxinLite.app/RelaxinLite
+uicache -p /Applications/RelaxinLite.app
+
+exit 0

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <!-- Half-block "R" from the Relaxin banner: █▀█ / █▀▄ on a 3x4 pixel grid -->
+  <g fill="#000000">
+    <rect x="242" y="152" width="180" height="720"/>
+    <rect x="422" y="152" width="360" height="180"/>
+    <rect x="602" y="332" width="180" height="180"/>
+    <rect x="422" y="512" width="180" height="180"/>
+    <rect x="602" y="692" width="180" height="180"/>
+  </g>
+</svg>

@@ -1,0 +1,1262 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5069C0F8301289D300065F85 /* RelaxinEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5069C0DC301289C000065F85 /* RelaxinEngine.framework */; };
+		5069C0F9301289D300065F85 /* RelaxinEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5069C0DC301289C000065F85 /* RelaxinEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		50AA10163012600000065F16 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 50AA10173012600000065F17 /* libz.tbd */; };
+		B1800000000000000000001F /* RelaxinPostJailbreak.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18000000000000000000001 /* RelaxinPostJailbreak.framework */; };
+		B18000000000000000000020 /* RelaxinPostJailbreak.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18000000000000000000001 /* RelaxinPostJailbreak.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5069C0FA301289D300065F85 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 506994EA30121FDF00065F85 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5069C0DB301289C000065F85;
+			remoteInfo = RelaxinEngine;
+		};
+		B18000000000000000000005 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 506994EA30121FDF00065F85 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B18000000000000000000017;
+			remoteInfo = RelaxinPostJailbreak;
+		};
+		B18000000000000000000007 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 506994EA30121FDF00065F85 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B18000000000000000000017;
+			remoteInfo = RelaxinPostJailbreak;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5069C0FC301289D300065F85 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5069C0F9301289D300065F85 /* RelaxinEngine.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		506994F230121FDF00065F85 /* Relaxin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Relaxin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5069C0DC301289C000065F85 /* RelaxinEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RelaxinEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50AA10173012600000065F17 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		50AA102A3013000000065F2A /* libchoma.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libchoma.dylib; path = build/BaseBinResources/libchoma.dylib; sourceTree = SOURCE_ROOT; };
+		50AA102B3013000000065F2B /* libjailbreak.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libjailbreak.dylib; path = build/BaseBinResources/libjailbreak.dylib; sourceTree = SOURCE_ROOT; };
+		50AA102C3013000000065F2C /* libxpf.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxpf.dylib; path = build/BaseBinResources/libxpf.dylib; sourceTree = SOURCE_ROOT; };
+		B18000000000000000000001 /* RelaxinPostJailbreak.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RelaxinPostJailbreak.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B18000000000000000000002 /* RelaxinLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RelaxinLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		5069951B301220D200065F85 /* Exceptions for "Relaxin" folder in "Relaxin" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Resources/Info.plist,
+				Resources/roothideapp.deb,
+			);
+			target = 506994F130121FDF00065F85 /* Relaxin */;
+		};
+		5069C0E8301289C000065F85 /* Exceptions for "RelaxinEngine" folder in "RelaxinEngine" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			additionalCompilerFlagsByRelativePath = {
+				KernelAccess/Exploit/DarkSword/DarkSword.m = "-Wno-deprecated-declarations -Wno-unused-variable -DRLX_EXPLOIT_INTERPOSE_PRINTF=1";
+				KernelAccess/Exploit/Rocket/KRW/KRW.c = "-DRLX_EXPLOIT_INTERPOSE_PRINTF=1";
+				KernelAccess/Exploit/Rocket/KRW/Offsets.m = "-DRLX_EXPLOIT_INTERPOSE_PRINTF=1";
+			};
+			membershipExceptions = (
+				KernelAccess/Exploit/DarkSword/LICENSE.md,
+				KernelAccess/Exploit/Rocket/LICENSE.md,
+			);
+			publicHeaders = (
+				"Actions/RLXEngine+Actions.h",
+				Engine/RLXEngine.h,
+				Engine/RLXEngineTaskUpdate.h,
+				Engine/RLXRuntimeEnvironment.h,
+				Inspection/RLXBootstrapEnvironmentInspector.h,
+				KernelAccess/RLXKernelAccess.h,
+				KernelAccess/RLXKernelLayout.h,
+				Log/RLXEngineLog.h,
+				RelaxinEngine.h,
+			);
+			target = 5069C0DB301289C000065F85 /* RelaxinEngine */;
+		};
+		B1800000000000000000000B /* Exceptions for "RelaxinPostJailbreak" folder in "RelaxinPostJailbreak" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			publicHeaders = (
+				Controller/RLXPostJailbreakController.h,
+				Controller/RLXPostJailbreakLog.h,
+				Inspection/RLXPackageManagerHealthInspector.h,
+				RelaxinPostJailbreak.h,
+			);
+			target = B18000000000000000000017 /* RelaxinPostJailbreak */;
+		};
+		B1800000000000000000000C /* Exceptions for "RelaxinLite" folder in "RelaxinLite" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Resources/Info.plist,
+				Resources/RelaxinLite.entitlements,
+			);
+			target = B18000000000000000000018 /* RelaxinLite */;
+		};
+		B1800000000000000000000D /* Exceptions for "Relaxin" folder in "RelaxinLite" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Backend/RuntimeAbstraction/HardwareExecutionClass.swift,
+				Backend/RuntimeAbstraction/BaselineIntegrityRequirement.swift,
+				Backend/RuntimeAbstraction/UpstreamBaselineManifest.swift,
+				Backend/RuntimeAbstraction/UpstreamBaselineRegistry.swift,
+				Backend/RuntimeAbstraction/HardwareSupportDescriptor.swift,
+				Backend/RuntimeAbstraction/HardwareSupportRegistry.swift,
+				Backend/RuntimeAbstraction/KernelProfileIntegrityMetadata.swift,
+				Backend/RuntimeAbstraction/BaselineIntegrityEvaluator.swift,
+				Backend/RuntimeAbstraction/RuntimeEnvironment.swift,
+				Backend/RuntimeAbstraction/RuntimeCapability.swift,
+				Backend/RuntimeAbstraction/RuntimeProfile.swift,
+				Backend/RuntimeAbstraction/RuntimeBackendDescriptor.swift,
+				Backend/RuntimeAbstraction/RuntimeBackendPolicy.swift,
+				Backend/RuntimeAbstraction/RuntimeBackendPolicyStore.swift,
+				Backend/RuntimeAbstraction/RuntimeResolution.swift,
+				Backend/RuntimeAbstraction/RuntimeResolutionIdentity.swift,
+				Backend/RuntimeAbstraction/RuntimeProfileResolver.swift,
+				Backend/RuntimeAbstraction/RuntimeOperationRequirements.swift,
+				Backend/RuntimeAbstraction/RuntimeExecutionAdmission.swift,
+				Backend/RuntimeAbstraction/RuntimeBackendExecutionAdapter.swift,
+				Backend/RuntimeAbstraction/RuntimeProfileRegistry.swift,
+				Backend/RuntimeAbstraction/RuntimeBackend.swift,
+				Backend/RuntimeAbstraction/LegacyRelaxinRuntimeBackend.swift,
+				Backend/RuntimeAbstraction/RuntimeBackendRegistry.swift,
+				Interface/Settings/RuntimeBackendSettingsView.swift,
+				Backend/EnvironmentRecovery/CompatibilityGate.swift,
+				Backend/EnvironmentRecovery/EnvironmentCheckpointStore.swift,
+				Backend/EnvironmentRecovery/EnvironmentDiagnostics.swift,
+				Backend/EnvironmentRecovery/EnvironmentGeneration.swift,
+				Backend/EnvironmentRecovery/EnvironmentInspector.swift,
+				Backend/EnvironmentRecovery/EnvironmentPrimaryAction.swift,
+				Backend/EnvironmentRecovery/EnvironmentRecoveryCoordinator.swift,
+				Backend/EnvironmentRecovery/EnvironmentSnapshot.swift,
+				Backend/EnvironmentRecovery/JailbreakEnvironmentState.swift,
+				Backend/EnvironmentRecovery/PostConditionVerifier.swift,
+				Backend/EnvironmentRecovery/RecoveryOperation.swift,
+				Backend/EnvironmentRecovery/RecoveryStage.swift,
+				Backend/EnvironmentRecovery/RepairPlan.swift,
+				Backend/EnvironmentRecovery/StaleStateInvalidator.swift,
+				Backend/StealthCompatibility/AppStealthProfile.swift,
+				Backend/StealthCompatibility/StealthHealthInspector.swift,
+				Backend/StealthCompatibility/StealthProfileResolver.swift,
+				Backend/StealthCompatibility/StealthProfileRevalidator.swift,
+				Backend/StealthCompatibility/StealthProfileStore.swift,
+				Interface/Home/EnvironmentStatusView.swift,
+				Interface/Settings/StealthCompatibilityView.swift,
+				Application/RelaxinApp.swift,
+				Application/RelaxinRuntime.swift,
+				"Backend/EngineSession/EngineSession+FailureReport.swift",
+				"Backend/EngineSession/EngineSession+OutputLine.swift",
+				"Backend/EngineSession/EngineSession+Types.swift",
+				Backend/EngineSession/EngineSession.swift,
+				"Backend/JailbreakConfiguration/JailbreakConfiguration+JetsamMultiplier.swift",
+				Backend/JailbreakConfiguration/JailbreakConfiguration.swift,
+				Backend/JailbreakConfiguration/JailbreakTarget.swift,
+				"Backend/Logging/AppLog+EngineBridge.swift",
+				"Backend/Logging/AppLog+Export.swift",
+				Backend/Utilities/RelaxinReset.swift,
+				"Interface/Home/HomeView+Actions.swift",
+				"Interface/Home/HomeView+FailureView.swift",
+				"Interface/Home/HomeView+Maintenance.swift",
+				"Interface/Home/HomeView+Menu.swift",
+				"Interface/Home/HomeView+MenuAction.swift",
+				"Interface/Home/HomeView+Presentation.swift",
+				"Interface/Home/HomeView+Screen.swift",
+				Interface/Home/HomeView.swift,
+				Interface/Root/RootView.swift,
+				Resources/Entitlements.entitlements,
+				Resources/Info.plist,
+				Resources/InfoPlist.xcstrings,
+				Resources/KernelOffsets.plist,
+				Resources/roothideapp.deb,
+				main.swift,
+			);
+			target = B18000000000000000000018 /* RelaxinLite */;
+		};
+		B1800000000000000000000E /* Exceptions for "SwiftTerm" folder in "RelaxinLite" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				LICENSE,
+			);
+			target = B18000000000000000000018 /* RelaxinLite */;
+		};
+		B1800000000000000000000F /* Exceptions for "Dog" folder in "RelaxinLite" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				LICENSE,
+			);
+			target = B18000000000000000000018 /* RelaxinLite */;
+		};
+		50AA10043012300000065F04 /* Exceptions for "SwiftTerm" folder in "Relaxin" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				LICENSE,
+			);
+			target = 506994F130121FDF00065F85 /* Relaxin */;
+		};
+		50AA100C3012300000065F0C /* Exceptions for "Dog" folder in "Relaxin" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				LICENSE,
+			);
+			target = 506994F130121FDF00065F85 /* Relaxin */;
+		};
+		50AA10143012400000065F14 /* Exceptions for "ZIPFoundation" folder in "Relaxin" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				LICENSE,
+			);
+			target = 506994F130121FDF00065F85 /* Relaxin */;
+		};
+		50AA10183012600000065F18 /* Exceptions for "libgrabkernel2" folder in "RelaxinEngine" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				LICENSE,
+				README.md,
+				RELAXIN_PATCHES.md,
+			);
+			target = 5069C0DB301289C000065F85 /* RelaxinEngine */;
+		};
+		50AA10193012600000065F19 /* Exceptions for "partial" folder in "RelaxinEngine" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				LICENSE,
+				README.md,
+				RELAXIN_PATCHES.md,
+			);
+			target = 5069C0DB301289C000065F85 /* RelaxinEngine */;
+		};
+		50AA10403014000000065F40 /* Exceptions for "zstd" folder in "RelaxinEngine" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				LICENSE,
+				README.md,
+			);
+			target = 5069C0DB301289C000065F85 /* RelaxinEngine */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		50AA10263012900000065F26 /* Exceptions for "Relaxin" folder in "Copy Bundle Resources" phase from "Relaxin" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = 506994F030121FDF00065F85 /* Resources */;
+			membershipExceptions = (
+				Resources/roothideapp.deb,
+			);
+		};
+		50E5F62C3013C68E00B83F30 /* Exceptions for "ElleKit" folder in "Copy Bundle Resources" phase from "Relaxin" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = 506994F030121FDF00065F85 /* Resources */;
+			membershipExceptions = (
+				CydiaSubstrate.framework,
+			);
+		};
+		61F89B6F301382F700821F41 /* Exceptions for "Sileo" folder in "Copy Bundle Resources" phase from "Relaxin" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = 506994F030121FDF00065F85 /* Resources */;
+			membershipExceptions = (
+				sileo.deb,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		506994F430121FDF00065F85 /* Relaxin */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				5069951B301220D200065F85 /* Exceptions for "Relaxin" folder in "Relaxin" target */,
+				B1800000000000000000000D /* Exceptions for "Relaxin" folder in "RelaxinLite" target */,
+				50AA10263012900000065F26 /* Exceptions for "Relaxin" folder in "Copy Bundle Resources" phase from "Relaxin" target */,
+			);
+			path = Relaxin;
+			sourceTree = "<group>";
+		};
+		5069C0D3301288EF00065F85 /* RelaxinEngine */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				5069C0E8301289C000065F85 /* Exceptions for "RelaxinEngine" folder in "RelaxinEngine" target */,
+			);
+			path = RelaxinEngine;
+			sourceTree = "<group>";
+		};
+		B18000000000000000000009 /* RelaxinPostJailbreak */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B1800000000000000000000B /* Exceptions for "RelaxinPostJailbreak" folder in "RelaxinPostJailbreak" target */,
+			);
+			path = RelaxinPostJailbreak;
+			sourceTree = "<group>";
+		};
+		B1800000000000000000000A /* RelaxinLite */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B1800000000000000000000C /* Exceptions for "RelaxinLite" folder in "RelaxinLite" target */,
+			);
+			path = RelaxinLite;
+			sourceTree = "<group>";
+		};
+		50AA10063012300000065F06 /* SwiftTerm */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				50AA10043012300000065F04 /* Exceptions for "SwiftTerm" folder in "Relaxin" target */,
+				B1800000000000000000000E /* Exceptions for "SwiftTerm" folder in "RelaxinLite" target */,
+			);
+			path = SwiftTerm;
+			sourceTree = "<group>";
+		};
+		50AA100D3012300000065F0D /* Dog */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				50AA100C3012300000065F0C /* Exceptions for "Dog" folder in "Relaxin" target */,
+				B1800000000000000000000F /* Exceptions for "Dog" folder in "RelaxinLite" target */,
+			);
+			path = Dog;
+			sourceTree = "<group>";
+		};
+		50AA10153012400000065F15 /* ZIPFoundation */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				50AA10143012400000065F14 /* Exceptions for "ZIPFoundation" folder in "Relaxin" target */,
+			);
+			path = ZIPFoundation;
+			sourceTree = "<group>";
+		};
+		50AA101A3012600000065F1A /* libgrabkernel2 */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				50AA10183012600000065F18 /* Exceptions for "libgrabkernel2" folder in "RelaxinEngine" target */,
+			);
+			path = libgrabkernel2;
+			sourceTree = "<group>";
+		};
+		50AA101B3012600000065F1B /* partial */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				50AA10193012600000065F19 /* Exceptions for "partial" folder in "RelaxinEngine" target */,
+			);
+			path = partial;
+			sourceTree = "<group>";
+		};
+		50AA10413014000000065F41 /* zstd */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				50AA10403014000000065F40 /* Exceptions for "zstd" folder in "RelaxinEngine" target */,
+			);
+			path = zstd;
+			sourceTree = "<group>";
+		};
+		50E5F62A3013C68D00B83F30 /* ElleKit */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				50E5F62C3013C68E00B83F30 /* Exceptions for "ElleKit" folder in "Copy Bundle Resources" phase from "Relaxin" target */,
+			);
+			path = ElleKit;
+			sourceTree = "<group>";
+		};
+		61F89B6D301382F600821F41 /* Sileo */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				61F89B6F301382F700821F41 /* Exceptions for "Sileo" folder in "Copy Bundle Resources" phase from "Relaxin" target */,
+			);
+			path = Sileo;
+			sourceTree = "<group>";
+		};
+		C0F1600086F14A72B3210001 /* Configuration */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		506994EF30121FDF00065F85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5069C0F8301289D300065F85 /* RelaxinEngine.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5069C0D9301289C000065F85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50AA10163012600000065F16 /* libz.tbd in Frameworks */,
+				B1800000000000000000001F /* RelaxinPostJailbreak.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B18000000000000000000012 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B18000000000000000000015 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B18000000000000000000020 /* RelaxinPostJailbreak.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		506994E930121FDF00065F85 = {
+			isa = PBXGroup;
+			children = (
+				506994F430121FDF00065F85 /* Relaxin */,
+				5069C0D3301288EF00065F85 /* RelaxinEngine */,
+				B18000000000000000000009 /* RelaxinPostJailbreak */,
+				B1800000000000000000000A /* RelaxinLite */,
+				C0F1600086F14A72B3210001 /* Configuration */,
+				50AA10083012300000065F08 /* Vendor */,
+				506994F330121FDF00065F85 /* Products */,
+				5069C0F7301289D300065F85 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		506994F330121FDF00065F85 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				506994F230121FDF00065F85 /* Relaxin.app */,
+				5069C0DC301289C000065F85 /* RelaxinEngine.framework */,
+				B18000000000000000000001 /* RelaxinPostJailbreak.framework */,
+				B18000000000000000000002 /* RelaxinLite.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5069C0F7301289D300065F85 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				50AA10173012600000065F17 /* libz.tbd */,
+				50AA102A3013000000065F2A /* libchoma.dylib */,
+				50AA102B3013000000065F2B /* libjailbreak.dylib */,
+				50AA102C3013000000065F2C /* libxpf.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		50AA10083012300000065F08 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				50AA100D3012300000065F0D /* Dog */,
+				50E5F62A3013C68D00B83F30 /* ElleKit */,
+				50AA101A3012600000065F1A /* libgrabkernel2 */,
+				50AA101B3012600000065F1B /* partial */,
+				61F89B6D301382F600821F41 /* Sileo */,
+				50AA10063012300000065F06 /* SwiftTerm */,
+				50AA10153012400000065F15 /* ZIPFoundation */,
+				50AA10413014000000065F41 /* zstd */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		5069C0D7301289C000065F85 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B18000000000000000000010 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		506994F130121FDF00065F85 /* Relaxin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 506994FD30121FDF00065F85 /* Build configuration list for PBXNativeTarget "Relaxin" */;
+			buildPhases = (
+				50AA100E3012400000065F0E /* Generate Open Source Licenses */,
+				50AA10223012700000065F22 /* Stage Generated Resources */,
+				506994EE30121FDF00065F85 /* Sources */,
+				506994EF30121FDF00065F85 /* Frameworks */,
+				506994F030121FDF00065F85 /* Resources */,
+				50AA10323012B00000065F32 /* Embed Exploit Libraries */,
+				5069C0FC301289D300065F85 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5069C0FB301289D300065F85 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				506994F430121FDF00065F85 /* Relaxin */,
+				50AA10063012300000065F06 /* SwiftTerm */,
+				50AA100D3012300000065F0D /* Dog */,
+				50AA10153012400000065F15 /* ZIPFoundation */,
+			);
+			name = Relaxin;
+			productName = Relaxin;
+			productReference = 506994F230121FDF00065F85 /* Relaxin.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5069C0DB301289C000065F85 /* RelaxinEngine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5069C0E4301289C000065F85 /* Build configuration list for PBXNativeTarget "RelaxinEngine" */;
+			buildPhases = (
+				5069C0D7301289C000065F85 /* Headers */,
+				50AA10303012A00000065F30 /* Prepare Exploit Dependencies */,
+				5069C0D8301289C000065F85 /* Sources */,
+				5069C0D9301289C000065F85 /* Frameworks */,
+				5069C0DA301289C000065F85 /* Resources */,
+				50AA10313012A00000065F31 /* Fix Exploit Runtime Paths */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B18000000000000000000006 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				5069C0D3301288EF00065F85 /* RelaxinEngine */,
+				50AA101A3012600000065F1A /* libgrabkernel2 */,
+				50AA101B3012600000065F1B /* partial */,
+				50AA10413014000000065F41 /* zstd */,
+			);
+			name = RelaxinEngine;
+			productName = RelaxinEngine;
+			productReference = 5069C0DC301289C000065F85 /* RelaxinEngine.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B18000000000000000000017 /* RelaxinPostJailbreak */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B1800000000000000000001B /* Build configuration list for PBXNativeTarget "RelaxinPostJailbreak" */;
+			buildPhases = (
+				B18000000000000000000010 /* Headers */,
+				B18000000000000000000021 /* Prepare BaseBin Headers */,
+				B18000000000000000000011 /* Sources */,
+				B18000000000000000000012 /* Frameworks */,
+				B18000000000000000000013 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				B18000000000000000000009 /* RelaxinPostJailbreak */,
+			);
+			name = RelaxinPostJailbreak;
+			productName = RelaxinPostJailbreak;
+			productReference = B18000000000000000000001 /* RelaxinPostJailbreak.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B18000000000000000000018 /* RelaxinLite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B1800000000000000000001E /* Build configuration list for PBXNativeTarget "RelaxinLite" */;
+			buildPhases = (
+				B18000000000000000000014 /* Sources */,
+				B18000000000000000000015 /* Frameworks */,
+				B18000000000000000000016 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B18000000000000000000008 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				506994F430121FDF00065F85 /* Relaxin */,
+				B1800000000000000000000A /* RelaxinLite */,
+				50AA10063012300000065F06 /* SwiftTerm */,
+				50AA100D3012300000065F0D /* Dog */,
+			);
+			name = RelaxinLite;
+			productName = RelaxinLite;
+			productReference = B18000000000000000000002 /* RelaxinLite.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		506994EA30121FDF00065F85 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2700;
+				LastUpgradeCheck = 2700;
+				TargetAttributes = {
+					506994F130121FDF00065F85 = {
+						CreatedOnToolsVersion = 27.0;
+					};
+					5069C0DB301289C000065F85 = {
+						CreatedOnToolsVersion = 27.0;
+					};
+					B18000000000000000000017 = {
+						CreatedOnToolsVersion = 27.0;
+					};
+					B18000000000000000000018 = {
+						CreatedOnToolsVersion = 27.0;
+					};
+				};
+			};
+			buildConfigurationList = 506994ED30121FDF00065F85 /* Build configuration list for PBXProject "Relaxin" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+			);
+			mainGroup = 506994E930121FDF00065F85;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				506994F130121FDF00065F85 /* Relaxin */,
+				5069C0DB301289C000065F85 /* RelaxinEngine */,
+				B18000000000000000000017 /* RelaxinPostJailbreak */,
+				B18000000000000000000018 /* RelaxinLite */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		506994F030121FDF00065F85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5069C0DA301289C000065F85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B18000000000000000000013 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B18000000000000000000016 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		50AA100E3012400000065F0E /* Generate Open Source Licenses */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Open Source Licenses";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT/DevKit/Helpers/scan-licenses.sh\"\n";
+		};
+		50AA10223012700000065F22 /* Stage Generated Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Stage Generated Resources";
+			outputPaths = (
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/bootstrap_1900.tar.zst",
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/basebin.tar",
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/basebin.tc",
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/libroot.deb",
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/libkrw-dopamine.deb",
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/basebin-link.deb",
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/$(EXECUTABLE_NAME).roothide",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nrequire_file() {\n    if [ ! -f \"$1\" ]; then\n        echo \"error: [Stage] missing prebuilt $1\" >&2\n        exit 1\n    fi\n}\nrequire_file \"$SRCROOT/build/BootstrapResources/bootstrap_1900.tar.zst\"\nrequire_file \"$SRCROOT/build/BaseBinResources/basebin.tar\"\nrequire_file \"$SRCROOT/build/BaseBinResources/basebin.tc\"\nrequire_file \"$SRCROOT/build/BaseBinResources/libroot.deb\"\nrequire_file \"$SRCROOT/build/BaseBinResources/libkrw-dopamine.deb\"\nrequire_file \"$SRCROOT/build/BaseBinResources/basebin-link.deb\"\necho \"note: [Stage] bootstrap\"\n/bin/mkdir -p \"${SCRIPT_OUTPUT_FILE_0%/*}\"\n/usr/bin/ditto \"$SRCROOT/build/BootstrapResources/bootstrap_1900.tar.zst\" \"$SCRIPT_OUTPUT_FILE_0\"\necho \"note: [Stage] BaseBin\"\n/usr/bin/ditto \"$SRCROOT/build/BaseBinResources/basebin.tar\" \"$SCRIPT_OUTPUT_FILE_1\"\n/usr/bin/ditto \"$SRCROOT/build/BaseBinResources/basebin.tc\" \"$SCRIPT_OUTPUT_FILE_2\"\necho \"note: [Stage] packages\"\n/usr/bin/ditto \"$SRCROOT/build/BaseBinResources/libroot.deb\" \"$SCRIPT_OUTPUT_FILE_3\"\n/usr/bin/ditto \"$SRCROOT/build/BaseBinResources/libkrw-dopamine.deb\" \"$SCRIPT_OUTPUT_FILE_4\"\n/usr/bin/ditto \"$SRCROOT/build/BaseBinResources/basebin-link.deb\" \"$SCRIPT_OUTPUT_FILE_5\"\n/usr/bin/touch \"$SCRIPT_OUTPUT_FILE_6\"\necho \"note: [Stage] finished\"\n";
+		};
+		50AA10303012A00000065F30 /* Prepare Exploit Dependencies */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Prepare Exploit Dependencies";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nfor FILE in libjailbreak.dylib libxpf.dylib libchoma.dylib; do\n    if [ ! -f \"$SRCROOT/build/BaseBinResources/$FILE\" ]; then\n        echo \"error: [Prebuild] missing BaseBin resource $FILE; run BuildIPA.command first\" >&2\n        exit 1\n    fi\ndone\necho \"note: [Prebuild] exploit dependencies ready\"\n";
+		};
+		50AA10313012A00000065F31 /* Fix Exploit Runtime Paths */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Fix Exploit Runtime Paths";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n/usr/bin/install_name_tool -change \"@loader_path/libjailbreak.dylib\" \"@executable_path/libjailbreak.dylib\" \"$TARGET_BUILD_DIR/$EXECUTABLE_PATH\"\n/usr/bin/install_name_tool -change \"@loader_path/libxpf.dylib\" \"@executable_path/libxpf.dylib\" \"$TARGET_BUILD_DIR/$EXECUTABLE_PATH\"\n/usr/bin/install_name_tool -change \"@loader_path/libchoma.dylib\" \"@executable_path/libchoma.dylib\" \"$TARGET_BUILD_DIR/$EXECUTABLE_PATH\"\n/usr/bin/install_name_tool -change \"@loader_path/libjailbreak-sim.dylib\" \"@executable_path/libjailbreak-sim.dylib\" \"$TARGET_BUILD_DIR/$EXECUTABLE_PATH\"\n/usr/bin/install_name_tool -change \"@loader_path/libxpf-sim.dylib\" \"@executable_path/libxpf-sim.dylib\" \"$TARGET_BUILD_DIR/$EXECUTABLE_PATH\"\n/usr/bin/install_name_tool -change \"@loader_path/libchoma-sim.dylib\" \"@executable_path/libchoma-sim.dylib\" \"$TARGET_BUILD_DIR/$EXECUTABLE_PATH\"\n";
+		};
+		50AA10323012B00000065F32 /* Embed Exploit Libraries */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Exploit Libraries";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nLIBRARIES=\"libjailbreak.dylib libxpf.dylib libchoma.dylib\"\nif [ \"$PLATFORM_NAME\" = \"iphonesimulator\" ]; then\n    LIBRARIES=\"libjailbreak-sim.dylib libxpf-sim.dylib libchoma-sim.dylib\"\nfi\nfor DYLIB in $LIBRARIES; do\n    /usr/bin/ditto \"$SRCROOT/build/BaseBinResources/$DYLIB\" \"$TARGET_BUILD_DIR/$EXECUTABLE_FOLDER_PATH/$DYLIB\"\n    if [ \"${CODE_SIGNING_ALLOWED:-NO}\" = \"YES\" ]; then\n        /usr/bin/codesign --force --sign \"$EXPANDED_CODE_SIGN_IDENTITY\" --timestamp=none \"$TARGET_BUILD_DIR/$EXECUTABLE_FOLDER_PATH/$DYLIB\"\n    fi\ndone\n";
+		};
+		B18000000000000000000021 /* Prepare BaseBin Headers */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Prepare BaseBin Headers";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nHEADER_ROOT=\"$SRCROOT/build/BaseBinWork/Vendor/Dopamine/BaseBin/.include\"\nif [ ! -d \"$HEADER_ROOT\" ]; then\n    echo \"error: [Prebuild] missing BaseBin header tree; run BuildIPA.command first\" >&2\n    exit 1\nfi\necho \"note: [Prebuild] BaseBin headers ready\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		506994EE30121FDF00065F85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5069C0D8301289C000065F85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B18000000000000000000011 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B18000000000000000000014 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5069C0FB301289D300065F85 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5069C0DB301289C000065F85 /* RelaxinEngine */;
+			targetProxy = 5069C0FA301289D300065F85 /* PBXContainerItemProxy */;
+		};
+		B18000000000000000000006 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B18000000000000000000017 /* RelaxinPostJailbreak */;
+			targetProxy = B18000000000000000000005 /* PBXContainerItemProxy */;
+		};
+		B18000000000000000000008 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B18000000000000000000017 /* RelaxinPostJailbreak */;
+			targetProxy = B18000000000000000000007 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		506994FB30121FDF00065F85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = C0F1600086F14A72B3210001 /* Configuration */;
+			baseConfigurationReferenceRelativePath = Debug.xcconfig;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		506994FC30121FDF00065F85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = C0F1600086F14A72B3210001 /* Configuration */;
+			baseConfigurationReferenceRelativePath = Release.xcconfig;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		506994FE30121FDF00065F85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = Relaxin/Resources/Entitlements.entitlements;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Relaxin/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "RELAXIN-X";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Relaxin/Resources",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		506994FF30121FDF00065F85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = Relaxin/Resources/Entitlements.entitlements;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Relaxin/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "RELAXIN-X";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Relaxin/Resources",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5069C0E5301289C000065F85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = C0F1600086F14A72B3210001 /* Configuration */;
+			baseConfigurationReferenceRelativePath = Targets/RelaxinEngine.xcconfig;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/RelaxinEngine/RLXEngineLog",
+					"$(SRCROOT)/Vendor/libgrabkernel2/include",
+					"$(SRCROOT)/Vendor/partial/include",
+					"$(inherited)",
+				);
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5069C0E6301289C000065F85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = C0F1600086F14A72B3210001 /* Configuration */;
+			baseConfigurationReferenceRelativePath = Targets/RelaxinEngine.xcconfig;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/RelaxinEngine/RLXEngineLog",
+					"$(SRCROOT)/Vendor/libgrabkernel2/include",
+					"$(SRCROOT)/Vendor/partial/include",
+					"$(inherited)",
+				);
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B18000000000000000000019 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = C0F1600086F14A72B3210001 /* Configuration */;
+			baseConfigurationReferenceRelativePath = Targets/RelaxinPostJailbreak.xcconfig;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				DEFINES_MODULE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACH_O_TYPE = staticlib;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B1800000000000000000001A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = C0F1600086F14A72B3210001 /* Configuration */;
+			baseConfigurationReferenceRelativePath = Targets/RelaxinPostJailbreak.xcconfig;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				DEFINES_MODULE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACH_O_TYPE = staticlib;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B1800000000000000000001C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = C0F1600086F14A72B3210001 /* Configuration */;
+			baseConfigurationReferenceRelativePath = Targets/RelaxinLite.xcconfig;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = RelaxinLite/Resources/RelaxinLite.entitlements;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				ENABLE_DEBUG_DYLIB = NO;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RelaxinLite/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "RELAXIN-X Lite";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				PRODUCT_NAME = RelaxinLite;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B1800000000000000000001D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = C0F1600086F14A72B3210001 /* Configuration */;
+			baseConfigurationReferenceRelativePath = Targets/RelaxinLite.xcconfig;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = RelaxinLite/Resources/RelaxinLite.entitlements;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				ENABLE_DEBUG_DYLIB = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RelaxinLite/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "RELAXIN-X Lite";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				PRODUCT_NAME = RelaxinLite;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		506994ED30121FDF00065F85 /* Build configuration list for PBXProject "Relaxin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				506994FB30121FDF00065F85 /* Debug */,
+				506994FC30121FDF00065F85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		506994FD30121FDF00065F85 /* Build configuration list for PBXNativeTarget "Relaxin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				506994FE30121FDF00065F85 /* Debug */,
+				506994FF30121FDF00065F85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5069C0E4301289C000065F85 /* Build configuration list for PBXNativeTarget "RelaxinEngine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5069C0E5301289C000065F85 /* Debug */,
+				5069C0E6301289C000065F85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B1800000000000000000001B /* Build configuration list for PBXNativeTarget "RelaxinPostJailbreak" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B18000000000000000000019 /* Debug */,
+				B1800000000000000000001A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B1800000000000000000001E /* Build configuration list for PBXNativeTarget "RelaxinLite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1800000000000000000001C /* Debug */,
+				B1800000000000000000001D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 506994EA30121FDF00065F85 /* Project object */;
+}

@@ -1,0 +1,17 @@
+#include "Version.xcconfig"
+
+CODE_SIGN_STYLE = Automatic
+CODE_SIGN_IDENTITY = $(inherited)
+CODE_SIGNING_ALLOWED = YES
+CODE_SIGNING_REQUIRED = YES
+CODE_SIGNING_SUPPORTED = YES
+PRODUCT_BUNDLE_IDENTIFIER = com.aapl.relaxin
+PROVISIONING_PROFILE_SPECIFIER =
+IPHONEOS_DEPLOYMENT_TARGET = 16.5
+RELAXIN_BASEBIN_DEPLOYMENT_TARGET = 16.5
+
+// arm64e only — do not add arm64 back
+// simulator support is removed
+ARCHS = arm64e
+
+#include? "_Local.xcconfig"
