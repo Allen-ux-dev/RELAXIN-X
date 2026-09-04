@@ -4,7 +4,7 @@ This module contains the RELAXIN-X side of the typed Prism Runtime Service compa
 
 ## Build 52 compatibility baseline
 
-The wire contract in this directory was validated against the user-supplied `Prism 0.4.1 Build 52` unsigned IPA.
+The wire contract in this directory was validated against the user-supplied `Prism 0.4.1 Build 52` client and Complete Store source tree.
 
 Observed compatibility requirements:
 
@@ -17,13 +17,21 @@ Observed compatibility requirements:
 
 RELAXIN-X must only publish capabilities that have a real execution provider behind them. The default Build 52 host is therefore handshake-only and degraded until execution adapters are wired.
 
+## Runtime endpoint
+
+RELAXIN-X owns a dedicated Runtime Service socket:
+
+```text
+/var/run/relaxinx-runtime.sock
+```
+
+The path may be overridden internally with `RELAXINX_PRISM_RUNTIME_SOCKET` for development or migration testing. Prism remains product-neutral: its `prismd` Runtime Service discovery layer owns endpoint discovery and may also consume `PRISM_RUNTIME_SERVICE_SOCKET` for additional endpoints.
+
 ## Socket ownership boundary
 
-Prism Build 52 uses `/var/run/prismd.sock` for its privileged daemon transport and also constructs its runtime-service transport against that same endpoint.
+`/var/run/prismd.sock` remains owned by Prism's privileged daemon. RELAXIN-X must never bind, unlink, replace, or hijack it.
 
-RELAXIN-X **must not** blindly bind, unlink, replace, or hijack `/var/run/prismd.sock`. Doing so would intercept Prism privileged traffic and break the existing Transaction / Journal / Recovery boundary.
-
-The expected topology is:
+The integrated topology is:
 
 ```text
 Prism App
@@ -31,13 +39,23 @@ Prism App
   +-- /var/run/prismd.sock
         |
       prismd
-        |-- existing privileged request routing
-        `-- Runtime Service routing
+        |-- existing Transaction / Journal / Recovery traffic
+        `-- RuntimeServiceBridgeCoordinator
               |
-            RELAXIN-X Runtime Service Host
+              +-- discovery
+              +-- versioned handshake
+              `-- /var/run/relaxinx-runtime.sock
+                      |
+                    RELAXIN-X Runtime Service Host
 ```
 
-`PrismUnixSocketRuntimeServiceServer` therefore accepts an explicit endpoint path and refuses to start when that endpoint already exists. It is suitable as a routed/private endpoint behind `prismd`, or for integration tests, but is not permission to take ownership of the Prism daemon socket.
+`PrismUnixSocketRuntimeServiceServer` therefore serves only the dedicated RELAXIN-X endpoint and refuses to overwrite an existing socket endpoint.
+
+## Startup behavior
+
+The full RELAXIN-X app starts the Runtime Service Host during application initialization. Startup failure is logged as degraded/unavailable and does not abort the normal RELAXIN-X flow. RelaxinLite explicitly excludes these Runtime Service Host sources.
+
+This app-lifetime host provides the Build 52 connection path. A later persistent/background host may replace the startup implementation without changing Prism's typed service contract or endpoint discovery semantics.
 
 ## Security boundary
 
@@ -45,7 +63,7 @@ The Prism-facing bridge remains typed and allowlisted. It must not expose arbitr
 
 ## Current integration state
 
-Implemented on the RELAXIN-X side:
+Implemented:
 
 - Build 52 wire models
 - length-prefixed JSON codec
@@ -53,11 +71,16 @@ Implemented on the RELAXIN-X side:
 - stable runtime/service identity
 - fail-closed capability publication
 - framed request processor
-- Unix-domain socket runtime-service endpoint
-- wire and socket round-trip host tests
+- dedicated Unix-domain Runtime Service endpoint
+- RELAXIN-X startup bootstrap
+- Prism `prismd` default endpoint discovery
+- environment override / additional endpoint support
+- wire, endpoint, source-contract, and Unix socket round-trip host tests
 
-Still required for a complete Prism-app-to-RELAXIN-X route:
+Still intentionally unavailable until backed by real RELAXIN-X execution adapters:
 
-- the Build 52 `prismd` / privileged-protocol server-side router must forward Runtime Service requests to the RELAXIN-X runtime endpoint while preserving its existing privileged request handling.
+- app install / register / replace / remove / refresh
+- background privileged session
+- optional injection service
 
-That routing component is not contained in the supplied Prism IPA and must be integrated from the Prism server/daemon source rather than guessed or replaced by RELAXIN-X.
+Those capabilities must remain unavailable/degraded rather than being fabricated as ready.
