@@ -54,6 +54,13 @@ struct PrismBuild52WireTests {
         )
 
         let handshakeJSON = Data(#"{"handshake":{"_0":{"clientIdentifier":"dev.allenux.prism","supportedProtocolVersions":[1,2]}}}"#.utf8)
+        let processor = PrismRuntimeServiceFrameProcessor(host: host)
+        let framedHandshakeRequest = try codec.encodePayload(handshakeJSON)
+        let framedHandshakeResponse = try processor.handleFrame(framedHandshakeRequest)
+        let framedHandshakePayload = try codec.decodeFrame(framedHandshakeResponse)
+        let framedHandshakeObject = try object(framedHandshakePayload)
+        require(framedHandshakeObject["hello"] != nil, "framed transport must return a hello response")
+
         let handshakeResponse = try host.handleJSON(handshakeJSON)
         let handshakeObject = try object(handshakeResponse)
         guard
