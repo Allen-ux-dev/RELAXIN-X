@@ -5,4 +5,4 @@ OTHER_LDFLAGS[sdk=iphoneos*] = $(inherited) -ljailbreak
 
 // Prism Runtime Service Host belongs to the full RELAXIN-X application/runtime only.
 // Keep these synchronized-group sources out of RelaxinLite.
-EXCLUDED_SOURCE_FILE_NAMES = $(inherited) PrismBuild52WireModels.swift PrismLengthPrefixedJSONCodec.swift PrismBuild52RuntimeServiceHost.swift PrismRuntimeServiceFrameProcessor.swift PrismUnixSocketRuntimeServiceServer.swift PrismBuild52RuntimeDefaults.swift
+EXCLUDED_SOURCE_FILE_NAMES = $(inherited) PrismBuild52WireModels.swift PrismLengthPrefixedJSONCodec.swift PrismBuild52RuntimeServiceHost.swift PrismRuntimeServiceFrameProcessor.swift PrismUnixSocketRuntimeServiceServer.swift PrismBuild52RuntimeDefaults.swift PrismBuild52RuntimeEndpoint.swift PrismRuntimeBridgeBootstrap.swift
