@@ -5,6 +5,7 @@ SOURCES := \
 	$(ROOT)/Relaxin/Backend/PrismRuntimeBridge/PrismBuild52WireModels.swift \
 	$(ROOT)/Relaxin/Backend/PrismRuntimeBridge/PrismLengthPrefixedJSONCodec.swift \
 	$(ROOT)/Relaxin/Backend/PrismRuntimeBridge/PrismBuild52RuntimeServiceHost.swift \
+	$(ROOT)/Relaxin/Backend/PrismRuntimeBridge/PrismRuntimeServiceFrameProcessor.swift \
 	PrismBuild52WireTests.swift
 
 .PHONY: test clean
