@@ -2,3 +2,7 @@ PRODUCT_BUNDLE_IDENTIFIER = com.aapl.relaxin.lite
 HEADER_SEARCH_PATHS = $(inherited) "$(SRCROOT)/build/BaseBinWork/Vendor/Dopamine/BaseBin/.include"
 LIBRARY_SEARCH_PATHS = $(inherited) "$(SRCROOT)/build/BaseBinResources"
 OTHER_LDFLAGS[sdk=iphoneos*] = $(inherited) -ljailbreak
+
+// Prism Runtime Service Host belongs to the full RELAXIN-X application/runtime only.
+// Keep these synchronized-group sources out of RelaxinLite.
+EXCLUDED_SOURCE_FILE_NAMES = $(inherited) PrismBuild52WireModels.swift PrismLengthPrefixedJSONCodec.swift PrismBuild52RuntimeServiceHost.swift PrismRuntimeServiceFrameProcessor.swift PrismUnixSocketRuntimeServiceServer.swift
