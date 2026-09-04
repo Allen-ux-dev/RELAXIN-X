@@ -21,6 +21,17 @@ struct RelaxinApp: App {
                 + "build=\(AppInfo.build(in: runtime.resourceBundle)) arch=\(AppInfo.arch)"
         )
         AppLog.info(Self.self, "target \(JailbreakTarget.current.logDescription)")
+        do {
+            try PrismRuntimeBridgeBootstrap.shared.start(
+                serviceVersion: AppInfo.version(in: runtime.resourceBundle)
+            )
+            AppLog.info(Self.self, "Prism Runtime Service Host started")
+        } catch {
+            AppLog.error(
+                Self.self,
+                "Prism Runtime Service Host unavailable: \(error)"
+            )
+        }
         TerminalCharacterBackgroundImage.prepare()
         requestNetworkAccess()
     }
