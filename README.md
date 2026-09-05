@@ -2,6 +2,11 @@
 
 [English](#english) | [简体中文](#简体中文)
 
+> [!WARNING]
+> **Architecture Preview — no complete real-device verification has been performed for the current Prism / Runtime integration.** This branch demonstrates an architectural direction and source-level integration; it is not a stable device-ready jailbreak release yet. See [`ARCHITECTURE_PREVIEW.md`](ARCHITECTURE_PREVIEW.md).
+>
+> **架构预览——当前 Prism / Runtime 集成尚未完成真机完整验证。** 本分支用于展示架构理念与源码级集成，目前不应视为稳定的真机可用越狱发行版。详见 [`ARCHITECTURE_PREVIEW.md`](ARCHITECTURE_PREVIEW.md)。
+
 > An unofficial experimental derivative of Relaxin, focused on pushing its runtime, recovery, package-management, and upgrade architecture further.
 >
 > RELAXIN-X 是 Relaxin 的非官方实验性衍生项目，重点扩展运行时、恢复机制、包管理兼容性与后续升级架构。
