@@ -86,39 +86,11 @@ extension HomeView {
         configuration.consumeRemoveJailbreakRequest()
         AppLog.info(Self.self, "target confirmed \(JailbreakTarget.current.logDescription)")
 
-        guard recoveryOperation == nil,
-              !removesJailbreak,
-              configuration.packageManagers.contains(.zebra)
-        else {
-            launchEngine(
-                manifest: manifest,
-                removesJailbreak: removesJailbreak,
-                recoveryOperation: recoveryOperation
-            )
-            return
-        }
-
-        isPreparingPackageManagers = true
-        Task { @MainActor in
-            defer { isPreparingPackageManagers = false }
-            do {
-                let zebraPackage = try await ZebraPackagePreflight(
-                    cacheDirectory: runtime.cacheDirectory
-                ).prepare()
-                manifest[.zebraPackagePathKey] = zebraPackage.path
-                AppLog.info(Self.self, "zebra preflight verified package=\(zebraPackage.lastPathComponent)")
-                launchEngine(manifest: manifest, removesJailbreak: false, recoveryOperation: nil)
-            } catch {
-                AppLog.error(Self.self, "zebra preflight failed: \(error.localizedDescription)")
-                alert = Presentation.Alert(
-                    title: String(
-                        localized: "Zebra Unavailable",
-                        bundle: runtime.resourceBundle
-                    ),
-                    message: error.localizedDescription
-                )
-            }
-        }
+        launchEngine(
+            manifest: manifest,
+            removesJailbreak: removesJailbreak,
+            recoveryOperation: recoveryOperation
+        )
     }
 
     private func launchEngine(

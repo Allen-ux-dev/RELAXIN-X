@@ -1,13 +1,15 @@
 import Foundation
 
-enum PackageManager: String, CaseIterable, Hashable {
+enum PackageManager: String, CaseIterable, Hashable, Sendable {
     case sileo
     case zebra
+    case prism
 
     var displayName: String {
         switch self {
         case .sileo: "Sileo"
         case .zebra: "Zebra"
+        case .prism: "Prism"
         }
     }
 }
