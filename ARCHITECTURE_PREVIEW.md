@@ -50,7 +50,7 @@ The current architecture includes:
 Verified so far:
 
 - source/host contract tests
-- PrismCore test suite
+- PrismCore test suite (221 tests in the successful Mac build log)
 - Xcode compilation on the maintainer's Mac
 - RELAXIN-X IPA build completion
 
@@ -63,3 +63,19 @@ Not yet verified:
 - reboot/reconnect/recovery behavior on a physical device
 
 Until those device tests are complete, capability availability must remain fail-closed and this branch should be described as an **architecture preview**, not a completed device-ready implementation.
+
+## Architecture Preview 1 build artifact
+
+The maintainer produced the following unsigned IPA from the successful Mac build. Any GitHub Release asset published as Architecture Preview 1 should match this checksum exactly:
+
+```text
+Suggested release: RELAXIN-X Architecture Preview 1
+Suggested tag:     v0.5.0-arch-preview.1
+Suggested asset:   RELAXIN-X-v0.5.0-arch-preview.1.ipa
+File size:         35,969,121 bytes
+SHA-256:           93a72b833a89ca7d22df0972eb4d427c734a05898d1b68a93b312a03e4e4273c
+Bundle ID:         com.aapl.relaxin
+Display name:      RELAXIN-X
+```
+
+This checksum records the Mac-built preview artifact only. It does **not** indicate successful installation, jailbreak execution, or package-management behavior on a physical device.
