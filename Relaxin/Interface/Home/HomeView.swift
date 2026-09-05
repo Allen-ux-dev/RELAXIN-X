@@ -255,6 +255,27 @@ struct HomeView: View {
                     RuntimeBackendSettingsView(session: engineSession)
                 }
             }
+            .sheet(
+                isPresented: Binding(
+                    get: { engineSession.packageManagerConfirmationDraft != nil },
+                    set: { _ in }
+                )
+            ) {
+                if let draft = engineSession.packageManagerConfirmationDraft {
+                    PackageManagerInstallConfirmationView(
+                        draft: draft,
+                        resourceBundle: runtime.resourceBundle,
+                        onToggle: engineSession.togglePendingPackageManager,
+                        onCancel: engineSession.cancelPendingPackageManagers,
+                        onConfirm: {
+                            if let selection = engineSession.confirmPendingPackageManagers() {
+                                configuration.packageManagers = selection
+                            }
+                        }
+                    )
+                    .interactiveDismissDisabled()
+                }
+            }
             .task {
                 guard runtime.interfaceMode == .full else { return }
                 await engineSession.refreshEnvironment()
