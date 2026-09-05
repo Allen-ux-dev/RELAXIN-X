@@ -164,6 +164,8 @@ extension HomeView {
                         String(localized: "Recommended", bundle: resourceBundle)
                     case .zebra:
                         String(localized: "Experimental", bundle: resourceBundle)
+                    case .prism:
+                        String(localized: "Integrated Store", bundle: resourceBundle)
                     }
                     return (
                         .togglePackageManager(packageManager),
