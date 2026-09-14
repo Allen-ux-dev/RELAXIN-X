@@ -54,9 +54,12 @@ enum RuntimeProfileRegistry {
                     HardwareExecutionClass.pplGFXA14M1.rawValue,
                     HardwareExecutionClass.gfxA15M2.rawValue,
                     HardwareExecutionClass.gfxA16.rawValue,
-                    HardwareExecutionClass.sptmGFXA17.rawValue,
                 ],
                 osConstraint: .versionRange(minimum: "16.5.1", maximum: "17.3.1")
+            ),
+            RuntimeCompatibilityBand(
+                hardwareSupportIDs: [HardwareExecutionClass.sptmGFXA17.rawValue],
+                osConstraint: .versionRange(minimum: "17.0", maximum: "17.3.1")
             ),
         ],
         reportedFeatures: [
