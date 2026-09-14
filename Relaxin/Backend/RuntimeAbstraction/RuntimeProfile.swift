@@ -25,18 +25,31 @@ private struct ParsedRuntimeVersion: Comparable, Equatable {
     }
 }
 
+struct RuntimeVersionRange: Equatable, Hashable, Sendable {
+    let minimum: String
+    let maximum: String
+
+    func matches(_ version: String) -> Bool {
+        guard let current = ParsedRuntimeVersion(version),
+              let lower = ParsedRuntimeVersion(minimum),
+              let upper = ParsedRuntimeVersion(maximum),
+              lower <= upper
+        else { return false }
+        return current >= lower && current <= upper
+    }
+}
+
 enum RuntimeOSConstraint: Equatable, Hashable, Sendable {
     case versionRange(minimum: String, maximum: String)
+    case versionRanges([RuntimeVersionRange])
     case exactVersions(Set<String>)
 
     func matches(_ version: String) -> Bool {
         switch self {
         case let .versionRange(minimum, maximum):
-            guard let current = ParsedRuntimeVersion(version),
-                  let lower = ParsedRuntimeVersion(minimum),
-                  let upper = ParsedRuntimeVersion(maximum)
-            else { return false }
-            return current >= lower && current <= upper
+            return RuntimeVersionRange(minimum: minimum, maximum: maximum).matches(version)
+        case let .versionRanges(ranges):
+            return ranges.contains { $0.matches(version) }
         case let .exactVersions(versions):
             return versions.contains(version)
         }
