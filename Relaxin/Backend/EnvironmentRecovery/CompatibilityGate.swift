@@ -29,6 +29,11 @@ enum CompatibilityGate {
     ) -> Result {
         if let resolution = snapshot.runtimeResolution {
             if resolution.supportLevel == .unsupported || !resolution.isResolved {
+                if let admission = snapshot.runtimeCompatibilityAdmission,
+                   admission.status != .unsupported
+                {
+                    return Result(disposition: .unsupported(admissionIssue(admission)))
+                }
                 let reason = resolution.rejectedCandidates.first?.reasonCode.rawValue
                     ?? "runtime_resolution_unavailable"
                 return Result(
@@ -51,6 +56,10 @@ enum CompatibilityGate {
                     )
                 )
             }
+        } else if let admission = snapshot.runtimeCompatibilityAdmission,
+                  admission.status != .unsupported
+        {
+            return Result(disposition: .unsupported(admissionIssue(admission)))
         } else if !snapshot.target.supported {
             // Compatibility fallback for synthetic/legacy test providers. The
             // production provider always supplies a RuntimeResolution in Fix13.
@@ -148,5 +157,48 @@ enum CompatibilityGate {
             )
         }
         return Result(disposition: warnings.isEmpty ? .ready : .risky(warnings))
+    }
+
+    private static func admissionIssue(
+        _ admission: RuntimeCompatibilityAdmission
+    ) -> EnvironmentIssue {
+        if admission.blockers.contains(.baselineIntegrityMissing) {
+            let missing = admission.missingBaselineIntegrity
+                .map(\.rawValue)
+                .sorted()
+                .joined(separator: ",")
+            return EnvironmentIssue(
+                code: "runtime-baseline-evidence-missing",
+                message: "The announced runtime path is recognized, but required baseline evidence is missing: \(missing)"
+            )
+        }
+        if admission.blockers.contains(.hostContractIncomplete) {
+            return EnvironmentIssue(
+                code: "runtime-host-contract-incomplete",
+                message: "The announced runtime path is recognized, but the RELAXIN-X host compatibility contract is incomplete"
+            )
+        }
+        if admission.blockers.contains(.backendImplementationMissing) {
+            return EnvironmentIssue(
+                code: "runtime-backend-validation-required",
+                message: "The announced runtime path is recognized, but no independently verified backend implementation is registered"
+            )
+        }
+        if admission.blockers.contains(.deviceValidationRequired) {
+            return EnvironmentIssue(
+                code: "runtime-device-validation-required",
+                message: "The host path is ready, but device validation is required before execution can be enabled"
+            )
+        }
+        if admission.status == .verified {
+            return EnvironmentIssue(
+                code: "runtime-profile-registration-required",
+                message: "Compatibility evidence is verified, but production runtime routing has not been registered"
+            )
+        }
+        return EnvironmentIssue(
+            code: "runtime-compatibility-unavailable",
+            message: "The runtime compatibility path is not executable"
+        )
     }
 }
