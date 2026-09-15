@@ -1,6 +1,7 @@
 ROOT := $(abspath ../../..)
 BUILD := $(ROOT)/build/Tests/EnvironmentDiagnostics
 TEST := $(BUILD)/environment_diagnostics_tests
+TEST_COMPAT := $(BUILD)/environment_diagnostics_compatibility_tests
 SOURCES := \
 	$(ROOT)/Relaxin/Backend/RuntimeAbstraction/HardwareExecutionClass.swift \
 	$(ROOT)/Relaxin/Backend/RuntimeAbstraction/BaselineIntegrityRequirement.swift \
@@ -41,14 +42,19 @@ SWIFTC := swiftc
 endif
 
 .PHONY: all test clean
-all: $(TEST)
+all: $(TEST) $(TEST_COMPAT)
 
 $(TEST): main.swift $(SOURCES)
 	@mkdir -p $(BUILD)
 	$(SWIFTC) $(SOURCES) main.swift -o $@
 
-test: $(TEST)
+$(TEST_COMPAT): Compatibility/main.swift $(SOURCES)
+	@mkdir -p $(BUILD)
+	$(SWIFTC) $(SOURCES) Compatibility/main.swift -o $@
+
+test: $(TEST) $(TEST_COMPAT)
 	$(TEST)
+	$(TEST_COMPAT)
 
 clean:
 	rm -rf $(BUILD)
