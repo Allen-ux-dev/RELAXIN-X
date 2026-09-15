@@ -13,6 +13,8 @@ SOURCES := \
 	$(ROOT)/Relaxin/Backend/RuntimeAbstraction/RuntimeEnvironment.swift \
 	$(ROOT)/Relaxin/Backend/RuntimeAbstraction/RuntimeCapability.swift \
 	$(ROOT)/Relaxin/Backend/RuntimeAbstraction/RuntimeProfile.swift \
+	$(ROOT)/Relaxin/Backend/RuntimeAbstraction/RuntimeCompatibilityAdmission.swift \
+	$(ROOT)/Relaxin/Backend/RuntimeAbstraction/RuntimeCompatibilityCoordinator.swift \
 	$(ROOT)/Relaxin/Backend/RuntimeAbstraction/RuntimeBackendDescriptor.swift \
 	$(ROOT)/Relaxin/Backend/RuntimeAbstraction/RuntimeBackendPolicy.swift \
 	$(ROOT)/Relaxin/Backend/RuntimeAbstraction/RuntimeResolution.swift \
