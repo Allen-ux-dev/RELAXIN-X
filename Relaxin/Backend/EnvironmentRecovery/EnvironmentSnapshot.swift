@@ -111,6 +111,7 @@ struct EnvironmentSnapshot: Equatable, Sendable {
     let fingerprint: EnvironmentFingerprint
     let generation: EnvironmentGeneration
     let runtimeResolution: RuntimeResolution?
+    let runtimeCompatibilityAdmission: RuntimeCompatibilityAdmission?
     let inspectedAt: Date
 
     init(
@@ -124,6 +125,7 @@ struct EnvironmentSnapshot: Equatable, Sendable {
         fingerprint: EnvironmentFingerprint = .unknown,
         generation: EnvironmentGeneration = .baseline,
         runtimeResolution: RuntimeResolution? = nil,
+        runtimeCompatibilityAdmission: RuntimeCompatibilityAdmission? = nil,
         inspectedAt: Date
     ) {
         self.target = target
@@ -136,6 +138,7 @@ struct EnvironmentSnapshot: Equatable, Sendable {
         self.fingerprint = fingerprint
         self.generation = generation
         self.runtimeResolution = runtimeResolution
+        self.runtimeCompatibilityAdmission = runtimeCompatibilityAdmission
         self.inspectedAt = inspectedAt
     }
 }
