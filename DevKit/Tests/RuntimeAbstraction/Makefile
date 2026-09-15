@@ -14,6 +14,7 @@ RUNTIME_SOURCES := \
 	$(ROOT)/Relaxin/Backend/RuntimeAbstraction/RuntimeCapability.swift \
 	$(ROOT)/Relaxin/Backend/RuntimeAbstraction/RuntimeProfile.swift \
 	$(ROOT)/Relaxin/Backend/RuntimeAbstraction/RuntimeProfileRegistry.swift \
+	$(ROOT)/Relaxin/Backend/RuntimeAbstraction/RuntimeCompatibilityAdmission.swift \
 	$(ROOT)/Relaxin/Backend/RuntimeAbstraction/RuntimeBackendDescriptor.swift \
 	$(ROOT)/Relaxin/Backend/RuntimeAbstraction/RuntimeResolution.swift \
 	$(ROOT)/Relaxin/Backend/RuntimeAbstraction/RuntimeResolutionIdentity.swift \
