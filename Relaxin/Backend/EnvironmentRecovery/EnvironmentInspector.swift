@@ -46,6 +46,9 @@ struct EnvironmentInspector {
                 policy: backendPolicy
             )
         }
+        let runtimeCompatibilityAdmission = runtimeEnvironment.flatMap { environment in
+            RuntimeCompatibilityCoordinator.evaluate(environment: environment)
+        }
 
         return EnvironmentSnapshot(
             target: target,
@@ -58,6 +61,7 @@ struct EnvironmentInspector {
             fingerprint: fingerprint,
             generation: generation,
             runtimeResolution: runtimeResolution,
+            runtimeCompatibilityAdmission: runtimeCompatibilityAdmission,
             inspectedAt: Date()
         )
     }
