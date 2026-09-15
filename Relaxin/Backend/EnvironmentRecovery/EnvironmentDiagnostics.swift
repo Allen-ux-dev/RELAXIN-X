@@ -23,6 +23,14 @@ struct EnvironmentDiagnosticRuntimeResolution: Codable, Equatable, Sendable {
     let rejectedCandidateReasonCodes: [String]
 }
 
+struct EnvironmentDiagnosticRuntimeCompatibility: Codable, Equatable, Sendable {
+    let upstreamVersion: String
+    let status: String
+    let allowsExecution: Bool
+    let missingBaselineIntegrity: [String]
+    let blockers: [String]
+}
+
 struct EnvironmentDiagnosticReport: Codable, Equatable, Sendable {
     let schemaVersion: Int
     let generatedAt: Date
@@ -31,6 +39,7 @@ struct EnvironmentDiagnosticReport: Codable, Equatable, Sendable {
     let generation: EnvironmentGeneration
     let checkpoint: EnvironmentDiagnosticCheckpoint
     let runtimeResolution: EnvironmentDiagnosticRuntimeResolution?
+    let runtimeCompatibility: EnvironmentDiagnosticRuntimeCompatibility?
     let findings: [EnvironmentDiagnosticFinding]
 
     static func make(
@@ -65,6 +74,16 @@ struct EnvironmentDiagnosticReport: Codable, Equatable, Sendable {
             )
         }
 
+        let runtimeCompatibility = snapshot.runtimeCompatibilityAdmission.map { admission in
+            EnvironmentDiagnosticRuntimeCompatibility(
+                upstreamVersion: admission.upstreamVersion,
+                status: admission.status.rawValue,
+                allowsExecution: admission.allowsExecution,
+                missingBaselineIntegrity: admission.missingBaselineIntegrity.map(\.rawValue).sorted(),
+                blockers: admission.blockers.map(\.rawValue).sorted()
+            )
+        }
+
         return EnvironmentDiagnosticReport(
             schemaVersion: 2,
             generatedAt: generatedAt,
@@ -73,6 +92,7 @@ struct EnvironmentDiagnosticReport: Codable, Equatable, Sendable {
             generation: snapshot.generation,
             checkpoint: checkpoint,
             runtimeResolution: runtimeResolution,
+            runtimeCompatibility: runtimeCompatibility,
             findings: findings
         )
     }
@@ -153,6 +173,10 @@ struct EnvironmentDiagnosticReport: Codable, Equatable, Sendable {
             )
         }
 
+        if let admission = snapshot.runtimeCompatibilityAdmission {
+            appendCompatibilityFindings(admission, findings: &findings)
+        }
+
         switch snapshot.bootstrap {
         case .absent, .validRelaxin:
             break
@@ -193,6 +217,52 @@ struct EnvironmentDiagnosticReport: Codable, Equatable, Sendable {
         appendPackageManagerFinding(manager: "sileo", health: snapshot.packageManagers.sileo, findings: &findings)
         appendPackageManagerFinding(manager: "zebra", health: snapshot.packageManagers.zebra, findings: &findings)
         return findings
+    }
+
+    private static func appendCompatibilityFindings(
+        _ admission: RuntimeCompatibilityAdmission,
+        findings: inout [EnvironmentDiagnosticFinding]
+    ) {
+        if admission.blockers.contains(.baselineIntegrityMissing) {
+            findings.append(
+                EnvironmentDiagnosticFinding(
+                    code: "runtime_baseline_evidence_missing",
+                    message: admission.missingBaselineIntegrity.map(\.rawValue).sorted().joined(separator: ",")
+                )
+            )
+        }
+        if admission.blockers.contains(.hostContractIncomplete) {
+            findings.append(
+                EnvironmentDiagnosticFinding(
+                    code: "runtime_host_contract_incomplete",
+                    message: "RELAXIN-X host compatibility contract is incomplete"
+                )
+            )
+        }
+        if admission.blockers.contains(.backendImplementationMissing) {
+            findings.append(
+                EnvironmentDiagnosticFinding(
+                    code: "runtime_backend_validation_required",
+                    message: "No independently verified backend implementation is registered for the announced path"
+                )
+            )
+        }
+        if admission.blockers.contains(.deviceValidationRequired) {
+            findings.append(
+                EnvironmentDiagnosticFinding(
+                    code: "runtime_device_validation_required",
+                    message: "Host compatibility is ready, but device validation is still required"
+                )
+            )
+        }
+        if admission.status == .verified && !admission.allowsExecution {
+            findings.append(
+                EnvironmentDiagnosticFinding(
+                    code: "runtime_profile_registration_required",
+                    message: "Compatibility evidence is verified, but execution routing remains disabled"
+                )
+            )
+        }
     }
 
     private static func appendPackageManagerFinding(
